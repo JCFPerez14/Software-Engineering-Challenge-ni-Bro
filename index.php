@@ -22,8 +22,9 @@ $error = "";
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link href="img/National-University-Lipa4.png" rel="icon">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Software Engineering (Challenge ni Bro)</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -62,8 +63,6 @@ $error = "";
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
                     <!-- Content Row -->
@@ -212,13 +211,14 @@ $error = "";
                                         <div class="progress-bar bg-danger" role="progressbar" style="width: 20%"
                                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <h4 class="small font-weight-bold">MinorOffence <span
+                                    <h4 class="small font-weight-bold">Minor Offence <span
                                             class="float-right">40%</span></h4>
                                     <div class="progress mb-4">
                                         <div class="progress-bar bg-warning" role="progressbar" style="width: 40%"
                                             aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>                                    
-                                    <h4 class="small font-weight-bold">Student Assistant Available</h4>
+                                    <h4 class="small font-weight-bold">Student Assistant Available <span
+                                    class="float-right">40%</span></h4>
                                     <div class="progress">
                                         <div class="progress-bar bg-success" role="progressbar" style="width: 100%"
                                             aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>

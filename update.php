@@ -58,16 +58,25 @@ if (isset($_POST['update'])) {
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="./includes/style.php">
- 
+  <style>
+    .containerspro {
+      background-image: url('img/nu-lipa-hero.jpg');
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 0;
+      }
+  </style>
 </head>
-<body>
- 
-<div class="container custom-container rounded-3 shadow my-5 p-3 px-5">
+<body class="containerspro">
+<div class="container custom-container rounded-3 shadow my-5 p-3 px-5"style="z-index: 2;">
   <h3 class="text-center mt-4">Update Page</h3>
   <form method="POST">
     <!-- Personal Information -->
     <div class="card mt-4">
-      <div class="card-header bg-info text-white">Personal Information</div>
+      <div class="card-header text-white" style="background-color: #35408e;">Personal Information</div>
       <div class="card-body">
         <div class="form-row">
           <div class="form-group col-md-6 col-sm-12">
@@ -78,45 +87,33 @@ if (isset($_POST['update'])) {
             <label for="lastName">Last Name:</label>
             <input type="text" class="form-control" value="<?php echo $data['user_lastname'];?>" name="lastname"  placeholder="Enter last name">
           </div>
+          <div class="form-group col-md-6 col-sm-12">
+          <label for="street">Students ID:</label>
+          <input type="text" class="form-control" name="Students_ID" placeholder="Enter Students ID">
         </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="birthday">Birthday:</label>
-            <input type="date" class="form-control" value="<?php echo $data['user_birthday'];?>"name="birthday">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="sex">Sex:</label>
-            <select class="form-control" name="sex">
-            <option value="Male" <?php if ($data['user_sex'] === 'Male') echo 'selected'; ?> >Male</option>
-            <option value="Female" <?php if ($data['user_sex'] === 'Female') echo 'selected'; ?> >Female</option>
-          </select>
-          </div>
         </div>
       </div>
     </div>
    
     <!-- Address Information -->
     <div class="card mt-4">
-      <div class="card-header bg-info text-white">Address Information</div>
+      <div class="card-header text-white"style="background-color: #35408e;">Details Information</div>
       <div class="card-body">
         <div class="form-group">
-          <label for="street">Street:</label>
-          <input type="text" class="form-control" value="<?php echo $data['street'];?>" name="street"  placeholder="Enter street">
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="barangay">Barangay:</label>
-            <input type="text" class="form-control" value="<?php echo $data['barangay'];?>" name="barangay"  placeholder="Enter barangay">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="city">City:</label>
-            <input type="text" class="form-control" value="<?php echo $data['city'];?>" name="city"   placeholder="Enter city">
-          </div>
+          <label for="Details">Details:</label>
+          <input type="text" class="form-control" name="Details"  placeholder="Enter Details of the Offense">
         </div>
         <div class="form-group">
-          <label for="province">Province:</label>
-          <input type="text" class="form-control" value="<?php echo $data['province'];?>" name="province"  placeholder="Enter province">
+          <label for="province">Level:</label>
+          <select class="form-control" name="sex">
+            <option value="Male" <?php if ($data['user_sex'] === 'Male') echo 'selected'; ?> >Minor Offense</option>
+            <option value="Female" <?php if ($data['user_sex'] === 'Female') echo 'selected'; ?> >Major Offense</option>
+          </select>
         </div>
+        <div class="form-group">
+            <label for="Date">Date:</label>
+            <input type="date" class="form-control" name="Date">
+          </div>
       </div>
     </div>
    
@@ -131,13 +128,14 @@ if (isset($_POST['update'])) {
  
         </div>
         <div class="col-lg-3 col-md-4">
-            <a class="btn btn-outline-danger btn-block mt-4" href="index.php">Go Back</a>
+            <a class="btn btn-outline-danger btn-block mt-4" href="tables.php">Go Back</a>
         </div>
     </div>
 </div>
  
  
   </form>
+</div>
 </div>
  
 <!-- Bootstrap JS and dependencies -->

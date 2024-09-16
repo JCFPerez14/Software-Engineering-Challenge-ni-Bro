@@ -48,9 +48,11 @@ if (isset($_POST['login'])) {
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="./includes/style.css">
-  <style>
-  
-  </style>
+<style>
+body {
+  background-image: url('img/nu-lipa-hero.jpg');
+}
+</style>
 </head>
 <body>
 

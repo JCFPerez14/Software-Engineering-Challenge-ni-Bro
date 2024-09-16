@@ -24,14 +24,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 foreach ($users as $user) {
                     $html .= '<tr>';
                     $html .= '<td>' . $user['user_id'] . '</td>';
-                    $html .= '<td><img src="' . htmlspecialchars($user['user_profile_picture']) . '" alt="Profile Picture" style="width: 50px; height: 50px; border-radius: 50%;"></td>';
-                    $html .= '<td>' . $user['user_firstname'] . '</td>';
                     $html .= '<td>' . $user['user_lastname'] . '</td>';
-                    $html .= '<td>' . $user['user_birthday'] . '</td>';
+                    $html .= '<td>' . $user['user_firstname'] . '</td>';
                     $html .= '<td>' . $user['user_sex'] . '</td>';
                     $html .= '<td>' . $user['user_email'] . '</td>';
-                    $html .= '<td>' . $user['user_name'] . '</td>';
-                    $html .= '<td>' . $user['address'] . '</td>';
+                    $html .= '<td>'; // Action column
+                    $html .= '<form action="update.php" method="post" style="display: inline;">';
+                    $html .= '<input type="hidden" name="id" value="' . $user['user_id'] . '">';
+                    $html .= '<button type="submit" class="btn btn-primary btn-sm">Edit</button>';
+                    $html .= '</form>';
                     $html .= '</td>';
                     $html .= '</tr>';
                 }

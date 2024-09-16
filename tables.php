@@ -38,14 +38,15 @@ try {
     foreach ($users as $user) {
         $html .= '<tr>';
         $html .= '<td>' . $user['user_id'] . '</td>';
-        $html .= '<td><img src="' . htmlspecialchars($user['user_profile_picture']) . '" alt="Profile Picture" style="width: 50px; height: 50px; border-radius: 50%;"></td>';
-        $html .= '<td>' . $user['user_firstname'] . '</td>';
         $html .= '<td>' . $user['user_lastname'] . '</td>';
-        $html .= '<td>' . $user['user_birthday'] . '</td>';
+        $html .= '<td>' . $user['user_firstname'] . '</td>';
         $html .= '<td>' . $user['user_sex'] . '</td>';
         $html .= '<td>' . $user['user_email'] . '</td>';
-        $html .= '<td>' . $user['user_name'] . '</td>';
-        $html .= '<td>' . $user['address'] . '</td>';
+        $html .= '<td>'; // Action column
+        $html .= '<form action="update.php" method="post" style="display: inline;">';
+        $html .= '<input type="hidden" name="id" value="' . $user['user_id'] . '">';
+        $html .= '<button type="submit" class="btn btn-primary btn-sm">Edit</button>';
+        $html .= '</form>';
         $html .= '</td>';
         $html .= '</tr>';
     }
@@ -125,14 +126,11 @@ try {
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Data Tables</h6>
                         </div>
                         <!-- Search input and Print button -->
                         <div class="container mb-3">
@@ -147,28 +145,22 @@ try {
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>User_ID</th>
-                                            <th>Picture</th>
-                                            <th>First Name</th>
+                                            <th>Student ID</th>
                                             <th>Last Name</th>
-                                            <th>Birthday</th>
+                                            <th>First Name</th>
                                             <th>Sex</th>
                                             <th>Email</th>
-                                            <th>Username</th>
-                                            <th>Address</th>
+                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>User_ID</th>
-                                            <th>Picture</th>
-                                            <th>First Name</th>
+                                            <th>Student ID</th>
                                             <th>Last Name</th>
-                                            <th>Birthday</th>
+                                            <th>First Name</th>
                                             <th>Sex</th>
                                             <th>Email</th>
-                                            <th>Username</th>
-                                            <th>Address</th>
+                                            <th>Actions</th>
                                         </tr>
                                     </tfoot>
                                     <tbody id="userTableBody">
@@ -220,7 +212,7 @@ try {
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary <?php echo ($current_page == 'logout.php') ? 'active' : ''; ?>" href="logout.php">Logout</a>
                 </div>
             </div>
         </div>
