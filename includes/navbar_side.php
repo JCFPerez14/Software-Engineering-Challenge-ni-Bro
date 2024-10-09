@@ -46,14 +46,14 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="Policy-Index.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-archive"></i>
                     <span>Policy Index</span></a>
             </li>
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="StudentsPortal.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="far fa-address-card"></i>
                     <span>Students Portal</span></a>
             </li>
 
