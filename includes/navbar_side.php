@@ -50,6 +50,13 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <span>Policy Index</span></a>
             </li>
 
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="StudentsPortal.php">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Students Portal</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
